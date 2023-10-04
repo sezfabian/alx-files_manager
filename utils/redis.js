@@ -6,13 +6,13 @@ class RedisClient {
   constructor() {
     this.client = redis.createClient();
 
-    this.client.on('error', (err) => {
-      console.log(`Redis connection error: ${err}`);
+    this.client.on('error', (error) => {
+      console.log(`Redis connection error: ${error}`);
     });
   }
 
   isAlive() {
-    return this.client.connection_id !== null;
+    return this.client.connected;
   }
 
   async get(key) {
