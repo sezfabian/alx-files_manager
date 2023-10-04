@@ -33,7 +33,7 @@ class RedisClient {
         if (err) {
           reject(err);
         } else {
-          resolve(reply);
+          resolve('OK');
         }
       });
     });
